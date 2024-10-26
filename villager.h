@@ -10,6 +10,9 @@ public:
   // Dodatni konstruktor koji postavlja health na proizvoljnu vrijednost, ostale vrijednosti na maksimalne.
   Villager(int health);
 
+  // Copy konstruktor koji će napraviti kopiju jedinice, ali će postaviti health na maksimum
+  Villager(const Villager &villager);
+
 private:
   int health;
   int attack;

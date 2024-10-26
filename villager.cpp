@@ -13,3 +13,10 @@ Villager::Villager(int health) :
   attack(VILLAGER_MAX_ATTACK),
   speed(VILLAGER_MAX_SPEED) {
 }
+
+// Copy konstruktor koji će napraviti kopiju jedinice, ali će postaviti health na maksimum
+Villager::Villager(const Villager &villager) : 
+  health(VILLAGER_MAX_HEALTH),
+  attack(villager.attack),
+  speed(villager.speed) {
+}
