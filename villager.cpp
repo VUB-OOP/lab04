@@ -2,17 +2,24 @@
 #include "villager.h"
 
 // Defaultni konstruktor koji postavlja podatkovne članove na početne (maksimalne) vrijednosti:
-Villager::Villager() {
+/*Villager::Villager() {
   setHealth(VILLAGER_MAX_HEALTH);
   setAttack(VILLAGER_MAX_ATTACK);
   setSpeed(VILLAGER_MAX_SPEED);
-}
+}*/
 
 // Dodatni konstruktor koji postavlja health na proizvoljnu vrijednost, ostale vrijednosti na maksimalne.
-Villager::Villager(int health) {
+/*Villager::Villager(int health) {
   setHealth(health);
   setAttack(VILLAGER_MAX_ATTACK);
   setSpeed(VILLAGER_MAX_SPEED);
+}*/
+
+// Konstruktor s defaultnim argumentima koji zamjenjuje prethodna dva konstruktora.
+Villager::Villager(int health, int attack, double speed) {
+  setHealth(health);
+  setAttack(attack);
+  setSpeed(speed);
 }
 
 // Copy konstruktor koji će napraviti kopiju jedinice, ali će postaviti health na maksimum

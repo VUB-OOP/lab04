@@ -5,10 +5,13 @@
 class Villager {
 public:
   // Defaultni konstruktor koji postavlja podatkovne članove na početne (maksimalne) vrijednosti: health - 25, attack - 3, speed - 0.8.
-  Villager();
+  // Villager();
 
   // Dodatni konstruktor koji postavlja health na proizvoljnu vrijednost, ostale vrijednosti na maksimalne.
-  Villager(int health);
+  // Villager(int health);
+
+  // Konstruktor s defaultnim argumentima koji zamjenjuje prethodna dva konstruktora.
+  Villager(int health = VILLAGER_MAX_HEALTH, int attack = VILLAGER_MAX_ATTACK, double speed = VILLAGER_MAX_SPEED);
 
   // Copy konstruktor koji će napraviti kopiju jedinice, ali će postaviti health na maksimum
   Villager(const Villager &villager);
