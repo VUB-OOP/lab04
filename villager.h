@@ -23,6 +23,9 @@ public:
   void setAttack(int attack);
   void setSpeed(double speed);
 
+  // Metodu info koja prikazuje ime klase i vrijednosti podatkovnih članova: Villager (25, 3, 0.8)
+  void info();
+
 private:
   int health;
   int attack;

@@ -1,3 +1,4 @@
+#include <iostream>
 #include "villager.h"
 
 // Defaultni konstruktor koji postavlja podatkovne članove na početne (maksimalne) vrijednosti:
@@ -59,4 +60,9 @@ void Villager::setSpeed(double speed) {
     return;
   }
   this->speed = VILLAGER_MAX_SPEED;
+}
+
+// Metodu info koja prikazuje ime klase i vrijednosti podatkovnih članova: Villager (25, 3, 0.8)
+void Villager::info() {
+  std::cout << "Villager (" << health << ", " << attack << ", " << speed << ")" << std::endl;
 }
