@@ -13,6 +13,16 @@ public:
   // Copy konstruktor koji će napraviti kopiju jedinice, ali će postaviti health na maksimum
   Villager(const Villager &villager);
 
+  // getteri
+  int getHealth();
+  int getAttack();
+  double getSpeed();
+
+  // setteri
+  void setHealth(int health);
+  void setAttack(int attack);
+  void setSpeed(double speed);
+
 private:
   int health;
   int attack;
