@@ -7,6 +7,9 @@ public:
   // Defaultni konstruktor koji postavlja podatkovne članove na početne (maksimalne) vrijednosti: health - 25, attack - 3, speed - 0.8.
   Villager();
 
+  // Dodatni konstruktor koji postavlja health na proizvoljnu vrijednost, ostale vrijednosti na maksimalne.
+  Villager(int health);
+
 private:
   int health;
   int attack;

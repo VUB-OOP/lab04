@@ -6,3 +6,10 @@ Villager::Villager() :
   attack(VILLAGER_MAX_ATTACK),
   speed(VILLAGER_MAX_SPEED) {
 }
+
+// Dodatni konstruktor koji postavlja health na proizvoljnu vrijednost, ostale vrijednosti na maksimalne.
+Villager::Villager(int health) : 
+  health(health),
+  attack(VILLAGER_MAX_ATTACK),
+  speed(VILLAGER_MAX_SPEED) {
+}
