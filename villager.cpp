@@ -1,35 +1,16 @@
 #include <iostream>
 #include "villager.h"
 
-// Defaultni konstruktor koji postavlja podatkovne članove na početne (maksimalne) vrijednosti:
-/*Villager::Villager() {
-  setHealth(VILLAGER_MAX_HEALTH);
-  setAttack(VILLAGER_MAX_ATTACK);
-  setSpeed(VILLAGER_MAX_SPEED);
-}*/
-
-// Dodatni konstruktor koji postavlja health na proizvoljnu vrijednost, ostale vrijednosti na maksimalne.
-/*Villager::Villager(int health) {
-  setHealth(health);
-  setAttack(VILLAGER_MAX_ATTACK);
-  setSpeed(VILLAGER_MAX_SPEED);
-}*/
-
-// Konstruktor s defaultnim argumentima koji zamjenjuje prethodna dva konstruktora.
 Villager::Villager(int health, int attack, double speed) {
   setHealth(health);
   setAttack(attack);
   setSpeed(speed);
 }
 
-// Copy konstruktor koji će napraviti kopiju jedinice, ali će postaviti health na maksimum
-Villager::Villager(const Villager &villager) {
-  setHealth(VILLAGER_MAX_HEALTH);
-  setAttack(villager.attack);
-  setSpeed(villager.speed);
-}
+Villager::Villager(const Villager &villager) : 
+Villager(MAX_HEALTH, villager.attack, villager.speed) {}
 
-// getteri
+
 int Villager::getHealth() {
   return health;
 }
@@ -42,34 +23,34 @@ double Villager::getSpeed() {
   return speed;
 }
 
-// setteri
-void Villager::setHealth(int health) {
-  // ako je health u rasponu od 0 do VILLAGER_MAX_HEALTH, postavi health na tu vrijednost
-  if (health >= 0 && health <= VILLAGER_MAX_HEALTH) {
+
+Villager& Villager::setHealth(int health) {
+  if (health >= 0 && health <= MAX_HEALTH) {
     this->health = health;
-    return;
+    return *this;
   }
-  // ako je novi health "neispravan", postavi health na maksimalnu vrijednost
-  this->health = VILLAGER_MAX_HEALTH;
+  this->health = MAX_HEALTH;
+  return *this;
 }
 
-void Villager::setAttack(int attack) {
-  if (attack >= 0 && attack <= VILLAGER_MAX_ATTACK) {
+Villager& Villager::setAttack(int attack) {
+  if (attack >= 0 && attack <= MAX_ATTACK) {
     this->attack = attack;
-    return;
+    return *this;
   }
-  this->attack = VILLAGER_MAX_ATTACK;
+  this->attack = MAX_ATTACK;
+  return *this;
 }
 
-void Villager::setSpeed(double speed) {
-  if (speed >= 0 && speed <= VILLAGER_MAX_SPEED) {
+Villager& Villager::setSpeed(double speed) {
+  if (speed >= 0 && speed <= MAX_SPEED) {
     this->speed = speed;
-    return;
+    return *this;
   }
-  this->speed = VILLAGER_MAX_SPEED;
+  this->speed = MAX_SPEED;
+  return *this;
 }
 
-// Metodu info koja prikazuje ime klase i vrijednosti podatkovnih članova: Villager (25, 3, 0.8)
 void Villager::info() {
   std::cout << "Villager (" << health << ", " << attack << ", " << speed << ")" << std::endl;
 }
